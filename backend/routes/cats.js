@@ -17,7 +17,7 @@ router.get('/match', async (req, res) => {
     try {
         const { goodWith, energyLevel, shelter } = req.query;
         let filter = {};
-        if (goodWith) filter.goodWith = { $in: [goodWith] }; // Filter cats that are good with the specified type (e.g., dogs, children)
+        if (goodWith) filter.goodWith = { $all: Array.isArray(goodWith) ? goodWith : [goodWith] }; // Filter cats that are good with every selected type
         if (energyLevel) filter.energyLevel = energyLevel; // Filter cats that match the specified energy level
         if (shelter) {
             filter.shelter = Array.isArray(shelter) ? { $in: shelter } : shelter;

@@ -3,7 +3,7 @@ import {useState} from 'react';
 function Quiz({onSubmit}) {
     const [answers, setAnswers] = useState({
         energyLevel: '',
-        goodWith: '',
+        goodWith: [],
         shelter: []
     }); 
 
@@ -28,7 +28,7 @@ function Quiz({onSubmit}) {
     }
 
     function handleSubmit() {
-        if (!answers.energyLevel || !answers.goodWith || answers.shelter.length === 0) {
+        if (!answers.energyLevel || answers.goodWith.length === 0 || answers.shelter.length === 0) {
             alert('Please answer all questions before submitting.');
             return;
         }
@@ -48,10 +48,10 @@ function Quiz({onSubmit}) {
 
             <div>
                 <h3>Who do you live with?</h3>
-                <label><input type="radio" name="goodWith" value="dogs" onChange={handleChange} /> Dogs</label><br />
-                <label><input type="radio" name="goodWith" value="children" onChange={handleChange} /> Children</label><br />
-                <label><input type="radio" name="goodWith" value="cats" onChange={handleChange} /> Other cats</label><br />
-                <label><input type="radio" name="goodWith" value="solo owners" onChange={handleChange} /> None of the above</label>
+                <label><input type="checkbox" name="goodWith" value="dogs" onChange={handleChange} /> Dogs</label><br />
+                <label><input type="checkbox" name="goodWith" value="children" onChange={handleChange} /> Children</label><br />
+                <label><input type="checkbox" name="goodWith" value="cats" onChange={handleChange} /> Other cats</label><br />
+                <label><input type="checkbox" name="goodWith" value="solo owners" onChange={handleChange} /> None of the above</label>
             </div>
 
             <div>

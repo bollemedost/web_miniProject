@@ -12,7 +12,7 @@ function App() {
                 const params = new URLSearchParams();
 
                 params.append('energyLevel', energyLevel);
-                params.append('goodWith', goodWith);
+                goodWith.forEach(item => params.append('goodWith', item));
                 shelter.forEach(item => params.append('shelter', item));
 
                 const response = await fetch(`http://localhost:3001/api/cats/match?${params.toString()}`);
