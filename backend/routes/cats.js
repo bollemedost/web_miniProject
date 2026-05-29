@@ -15,10 +15,13 @@ router.get('/', async (req, res) => {
 // Get cats filtered by query 
 router.get('/match', async (req, res) => {
     try {
-        const { goodWith, energyLevel } = req.query;
+        const { goodWith, energyLevel, shelter } = req.query;
         let filter = {};
         if (goodWith) filter.goodWith = { $in: [goodWith] }; // Filter cats that are good with the specified type (e.g., dogs, children)
         if (energyLevel) filter.energyLevel = energyLevel; // Filter cats that match the specified energy level
+        if (shelter) {
+            filter.shelter = Array.isArray(shelter) ? { $in: shelter } : shelter;
+        }
         const cats = await Cat.find(filter); // Fetch cats from the database that match the filter criteria
         res.json(cats); // Send the filtered cats as a JSON response
     } catch (err) {
