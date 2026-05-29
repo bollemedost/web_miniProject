@@ -36,7 +36,7 @@ function Quiz({onSubmit}) {
                 <h3>Who do you live with?</h3>
                 <label><input type="radio" name="goodWith" value="dogs" onChange={handleChange} /> Dogs</label><br />
                 <label><input type="radio" name="goodWith" value="children" onChange={handleChange} /> Children</label><br />
-                <label><input type="radio" name="goodWith" value="other cats" onChange={handleChange} /> Other cats</label><br />
+                <label><input type="radio" name="goodWith" value="cats" onChange={handleChange} /> Other cats</label><br />
                 <label><input type="radio" name="goodWith" value="solo owners" onChange={handleChange} /> None of the above</label>
             </div>
 

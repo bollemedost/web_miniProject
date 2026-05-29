@@ -1,36 +1,7 @@
 import {useState, useEffect} from 'react';
 
-const breedIds = {
-        'Bengal': 'beng',
-        'Maine Coon': 'mcoo',
-        'Siamese': 'siam',
-        'Persian': 'pers',
-        'Ragdoll': 'ragd',
-        'Russian Blue': 'rblu',
-        'Norwegian Forest Cat': 'norw',
-        'British Shorthair': 'bsho',
-        'Siberian': 'sibe',  
-        'Ocicat': 'ocic',
-        'Tonkinese': 'tonk',
-        'York Chocolate': 'ycho',
-        'American Shorthair': 'asho',
-        'British Longhair': 'bslo'
-    };
-
 function CatCard({cat}) {
-    const [imageUrl, setImageUrl] = useState('');
-
-    useEffect(() => {
-        const breedId = breedIds[cat.breed];
-        if (breedId) {
-            fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=live_f1ce2FdZPzG3TmyDTHwYyR2OK1llgnvIsn6PZON4V1cKwOjfpVtbiwNVSvU7arvV`)
-                .then(res => res.json()) 
-                .then(data => {
-                    if (data.length > 0) setImageUrl(data[0].url);
-                });
-        }
-    }, [cat.breed]);
-
+    
     return (
         <div style={{ 
             border: '1px solid #ccc', 
@@ -38,9 +9,9 @@ function CatCard({cat}) {
             padding: '10px', 
             marginBottom: '10px',
             }}>
-            {imageUrl && (
+            {cat.image && (
                 <img 
-                src={imageUrl}
+                src={cat.image}
                 alt={cat.breed}
                 style={{ 
                     width: '100%', 
