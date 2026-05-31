@@ -27,7 +27,7 @@ function App() {
     }
 
     return (
-        <div style={{maxWidth: '600px', margin: '0 auto', padding: '20px'}}>
+        <div style={{width: '100%', margin: 0, padding: '60px 6vw', boxSizing: 'border-box'}}>
             {page === 'home' && <Home onStart={() => setPage('quiz')} />}
             {page === 'quiz' && <Quiz onSubmit={handleQuizSubmit} />}
             {page === 'results' && <Results cats={matchedCats} onRestart={handleRestart} />}

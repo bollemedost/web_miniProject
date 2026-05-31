@@ -1,23 +1,43 @@
 function Home({ onStart }) { // React component that takes an onStart function as a prop
     return(
-    <div>
-        <h1>Find your Purrfect Match!</h1>
-        <p>
+    <div style={{ 
+        textAlign: 'left',
+        padding: '10px 0',
+        marginTop: '200px',
+        fontSize: '18px',
+        fontFamily: 'Luckiest Guy, Arial, sans-serif',
+        maxWidth: '760px',
+        marginLeft: '6vw'
+        }}>
+        <h1 style={{
+            fontSize: '76px',
+            margin: '0 0 40px 0',
+            letterSpacing: '3px',
+            lineHeight: '0.95'
+        }}>
+        Purrfect Match</h1>
+        <p style={{
+            fontFamily: 'Luckiest Guy, Arial, sans-serif',
+            fontSize: '18px',
+            lineHeight: '1.6',
+            maxWidth: '520px',
+            marginTop: '8px'
+        }}>
         Answer a few questions about your lifestyle and preferences, and we'll match you with the ideal cat from a local shelter!
         </p>
         <button
             onClick={onStart} // Call the onStart function when the button is clicked
             style={{
-                backgroundColor: '#ea8cf5',
+                backgroundColor: '#000000',
                 color: 'white',
                 border: 'none',
-                padding: '10px 20px',
-                borderRadius: '5px',
+                padding: '20px 38px',
+                borderRadius: '40px',
                 cursor: 'pointer',
-                fontSize: '16px',
-                marginTop: '20px'
+                fontSize: '21px',
+                marginTop: '26px'
             }}
-        > 
+        >
         Find My Match →
         </button>
     </div>

@@ -1,4 +1,6 @@
 body {
+  background-color: #fab14b;
+  position: relative;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -6,6 +8,55 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 1800px;
+  height: 1280px;
+  background-image: url("../public/paw print.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 220px;
+  height: 220px;
+  background-image: url("../public/cat.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Paw Pattern 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.18;
+  background-image: url("../public/paw.png");
+  background-repeat: space;
+  background-size: 2.25cm 2.25cm;
+  background-position: center top;
+}*/
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
