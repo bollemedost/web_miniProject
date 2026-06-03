@@ -1,5 +1,5 @@
 # Environment variables
-.env
+# .env Removed for evaluation purposes. The .env file now contains access for Examiner. 
 
 # Node modules
 node_modules/
