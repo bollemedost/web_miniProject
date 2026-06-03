@@ -1,0 +1,11 @@
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# Mac system files
+.DS_Store
