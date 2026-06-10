@@ -9,7 +9,7 @@ const app = express(); // create an instance of the express server
 app.use(cors()); // enable CORS for all routes
 app.use(express.json()); // allows server to understand JSON data
 
-app.use((req, res, next) => {
+app.use((req, res, next) => { // Middleware to log incoming requests
   console.log(`${req.method} ${req.url}`);
   next();
 });

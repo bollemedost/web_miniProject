@@ -5,7 +5,7 @@ import Results from './components/results';
 
 function App() {
     const [page, setPage] = useState('home'); // State to track the current page (home, quiz, results)
-    const [matchedCats, setMatchedCats] = useState([]);
+    const [matchedCats, setMatchedCats] = useState([]); // State to store the list of cats matched based on the quiz answers
 
     async function handleQuizSubmit(answers) { // Calls the backend after completing the quiz to get matched cats based on the user's answers
         const {energyLevel, goodWith, shelter} = answers;
@@ -21,12 +21,12 @@ function App() {
         setPage('results');
     }
 
-    function handleRestart() {
+    function handleRestart() { // Resets the matched cats and navigates back to the home page when the user clicks the restart button
         setMatchedCats([]);
         setPage('home');
     }
 
-    return (
+    return ( // Render the appropriate page (home, quiz, or results) based on the current state of the application
         <div style={{width: '100%', margin: 0, padding: '60px 6vw', boxSizing: 'border-box'}}>
             {page === 'home' && <Home onStart={() => setPage('quiz')} />}
             {page === 'quiz' && <Quiz onSubmit={handleQuizSubmit} />}

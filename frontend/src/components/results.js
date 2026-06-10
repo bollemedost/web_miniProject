@@ -1,6 +1,6 @@
-function CatCard({cat}) {
+function CatCard({cat}) { // The CatCard component renders the information about a single cat in a card format
     
-    return (
+    return ( // Render the cat's image and details in a styled card layout
         <div style={{ 
             backgroundColor: '#f79a17',
             borderRadius: '5px', 
@@ -67,9 +67,9 @@ function CatCard({cat}) {
     );
 }
 
-function Results({cats, onRestart}) {
+function Results({cats, onRestart}) { // The Results component renders the list of matched cats or a message if no matches were found, and includes a button to restart the quiz
     if (cats.length === 0) {
-    return (
+    return ( // If no cats were matched, render a message and a button to restart the quiz
         <div style={{ 
                 padding: '10px', 
                 marginBottom: '10px',
@@ -97,7 +97,7 @@ function Results({cats, onRestart}) {
     );
     }
 
-    return (
+    return ( // If cats were matched, render the list of cats using the CatCard component and include a button to restart the quiz
         <div style={{ 
                 padding: '10px', 
                 marginBottom: '10px',

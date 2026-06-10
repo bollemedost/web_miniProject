@@ -1,13 +1,13 @@
 import {useState} from 'react';
 
-function Quiz({onSubmit}) {
+function Quiz({onSubmit}) { // The Quiz component renders the quiz form and handles user input
     const [answers, setAnswers] = useState({
         energyLevel: '',
         goodWith: [],
         shelter: []
     }); 
 
-    function handleChange(e) {
+    function handleChange(e) { // Handle changes to the form inputs and update the answers state accordingly
         if (e.target.type === 'checkbox') {
             const {name, value, checked} = e.target;
 
@@ -27,7 +27,7 @@ function Quiz({onSubmit}) {
         });
     }
 
-    function handleSubmit() {
+    function handleSubmit() { // Validate that all questions have been answered before submitting the quiz answers to the parent component
         if (!answers.energyLevel || answers.goodWith.length === 0 || answers.shelter.length === 0) {
             alert('Please answer all questions before submitting.');
             return;
@@ -35,7 +35,7 @@ function Quiz({onSubmit}) {
         onSubmit(answers);
     }
 
-    return (
+    return ( // Render the quiz form with questions about the user's lifestyle and preferences
         <div style={{ 
             padding: '10px', 
             marginBottom: '10px',

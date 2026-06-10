@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); 
 const router = express.Router();
 const Cat = require('../models/cat'); // Import the Cat model
 
@@ -19,9 +19,7 @@ router.get('/match', async (req, res) => {
         let filter = {};
         if (goodWith) filter.goodWith = { $all: Array.isArray(goodWith) ? goodWith : [goodWith] }; // Filter cats that are good with every selected type
         if (energyLevel) filter.energyLevel = energyLevel; // Filter cats that match the specified energy level
-        if (shelter) {
-            filter.shelter = Array.isArray(shelter) ? { $in: shelter } : shelter;
-        }
+        if (shelter) { filter.shelter = Array.isArray(shelter) ? { $in: shelter } : shelter; } // Filter cats that are available at any of the selected shelters
         const cats = await Cat.find(filter); // Fetch cats from the database that match the filter criteria
         res.json(cats); // Send the filtered cats as a JSON response
     } catch (err) {
