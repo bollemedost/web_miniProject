@@ -8,14 +8,14 @@ function App() {
     const [matchedCats, setMatchedCats] = useState([]);
 
     async function handleQuizSubmit(answers) { // Calls the backend after completing the quiz to get matched cats based on the user's answers
-                const {energyLevel, goodWith, shelter} = answers;
-                const params = new URLSearchParams();
+        const {energyLevel, goodWith, shelter} = answers;
+        const params = new URLSearchParams();
 
-                params.append('energyLevel', energyLevel);
-                goodWith.forEach(item => params.append('goodWith', item));
-                shelter.forEach(item => params.append('shelter', item));
+            params.append('energyLevel', energyLevel);
+            goodWith.forEach(item => params.append('goodWith', item));
+            shelter.forEach(item => params.append('shelter', item));
 
-                const response = await fetch(`http://localhost:3001/api/cats/match?${params.toString()}`);
+        const response = await fetch(`http://localhost:3001/api/cats/match?${params.toString()}`);
         const cats = await response.json();
         setMatchedCats(cats);
         setPage('results');

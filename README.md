@@ -22,7 +22,7 @@ web_miniProject/
 │   │   └── cat.js        # Mongoose schema for cat profiles
 │   ├── routes/
 │   │   └── cats.js       # API routes
-│   ├── .env              # Environment variables 
+│   ├── .env              # Environment variables
 │   └── server.js         # Express server entry point 
 └── frontend/
     └── src/
@@ -35,8 +35,6 @@ web_miniProject/
 ## Prerequisites
 
 - Node.js (v18 or higher)
-- A MongoDB Atlas account with a cluster set up
-- A `.env` file in the `/backend` folder (see below)
 
 ## Setup Instructions
 
@@ -55,7 +53,8 @@ npm install
 ```
 
 ## Test Credentials
-For evaluation purposes, I have crated a new user in the MongoDB Atlas, so the data is accessible. 
+Normally, the .env file would be included in the .gitignore to keep sensitive information secured. 
+For evaluation purposes, I have crated a new user with read-only access in the MongoDB Atlas, so the data is accessible. 
 Therefore the .env is pushed and easily acessible for examination purposes. 
 
 ### 3. Set up the frontend
